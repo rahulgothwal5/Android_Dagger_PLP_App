@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -70,8 +71,9 @@ dependencies {
 
 
 
-    implementation ("com.google.dagger:dagger:2.48")
-    kapt ("com.google.dagger:dagger-compiler:2.44")
+
+    implementation("com.google.dagger:hilt-android:2.44")
+    kapt("com.google.dagger:hilt-compiler:2.44")
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 

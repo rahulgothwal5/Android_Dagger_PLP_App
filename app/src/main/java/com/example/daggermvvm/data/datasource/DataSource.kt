@@ -14,7 +14,6 @@ interface DataSource {
     suspend fun saveProductsToDB(data: List<Product>)
 }
 
-@Singleton
 class RemoteDataSourceImpl @Inject constructor(private val fakerAPI: FakerAPI) : DataSource {
     override suspend fun fetchProductsFromServer(): Response<List<Product>> {
         return fakerAPI.getProducts()
@@ -29,7 +28,6 @@ class RemoteDataSourceImpl @Inject constructor(private val fakerAPI: FakerAPI) :
     }
 }
 
-@Singleton
 class LocalDBDataSourceImpl @Inject constructor(private val fakerDB: FakerDB) : DataSource {
     override suspend fun fetchProductsFromServer(): Response<List<Product>> {
         TODO("Not yet implemented")

@@ -5,10 +5,12 @@ import androidx.lifecycle.viewModelScope
 import com.example.daggermvvm.data.model.Product
 import com.example.daggermvvm.presentation.common.Result
 import com.example.daggermvvm.domain.usecases.GetProductsListUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class ProductsListViewModel @Inject constructor(
     private val getProductsListUseCase: GetProductsListUseCase
 ) : ViewModel() {

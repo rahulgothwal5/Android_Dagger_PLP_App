@@ -2,9 +2,11 @@ package com.example.daggermvvm.domain.usecases
 
 import com.example.daggermvvm.domain.repo.ProductRepository
 import com.example.daggermvvm.presentation.common.Result
+import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
+@ViewModelScoped
 class GetProductsListUseCase @Inject constructor(private val repository: ProductRepository) {
     operator fun invoke() = flow {
         try {
